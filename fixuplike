@@ -1,0 +1,19 @@
+Traffic Light System with Blynk Integration
+Overview
+This project simulates a traffic light system with Blynk integration for remote monitoring. Using an Arduino Yun, it controls three LEDs (Red, Yellow, Green) and allows real-time status updates through the Blynk app.
+
+Setup Instructions
+Hardware: Connect the LEDs to the Arduino Yun using the Grove Shield.
+Blynk Setup:
+Download the Blynk app and create a new project for Arduino Yun.
+Copy the provided auth token.
+Code Upload:
+Upload the code to the Arduino Yun and update the Wi-Fi credentials in the code.
+Run the Project: Open the Blynk app and view the traffic light status in real-time.
+Dependencies
+Blynk library for Arduino
+Code Walkthrough
+The Blynk library updates the app with the traffic light status using virtual pin V0 (Green, Yellow, Red).
+
+Future Enhancements
+Machine Learning integration to optimize light timings based on traffic conditions. 
