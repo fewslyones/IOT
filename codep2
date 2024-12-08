@@ -1,0 +1,105 @@
+#define BLYNK_TEMPLATE_ID "TMPL4EaZJdewv"
+
+#define BLYNK_TEMPLATE_NAME "IOT Traffic Light Project"
+
+ 
+
+#include <BlynkSimpleYun.h>  // Library for Arduino Yun
+
+ 
+
+// Blynk credentials
+
+char auth[] = "PlimFafOma|BIPEiYc-TpkTLtovFLHpL"; // Your Blynk auth token
+
+char ssid[] = "YourWiFiSSID";   // Replace with your WiFi SSID
+
+char pass[] = "YourWiFiPassword"; // Replace with your WiFi password
+
+ 
+
+// Pin assignments
+
+int redPin = 2;     // Red LED
+
+int yellowPin = 3;  // Yellow LED
+
+int greenPin = 4;   // Green LED
+
+int buttonPin = 5;  // Button for pedestrian crossing
+
+ 
+
+void setup() {
+
+  Serial.begin(9600);        // Start serial communication
+
+  Blynk.begin(auth);         // Initialize Blynk
+
+ 
+
+  pinMode(redPin, OUTPUT);   // Configure LED pins as outputs
+
+  pinMode(yellowPin, OUTPUT);
+
+  pinMode(greenPin, OUTPUT);
+
+  pinMode(buttonPin, INPUT_PULLUP); // Configure button pin as input with pull-up resistor
+
+}
+
+ 
+
+void loop() {
+
+  Blynk.run();  // Run Blynk service
+
+ 
+
+  // Normal traffic light sequence
+
+  digitalWrite(greenPin, HIGH);
+
+  Blynk.virtualWrite(V0, "Green Light");
+
+  delay(5000);
+
+  digitalWrite(greenPin, LOW);
+
+ 
+
+  digitalWrite(yellowPin, HIGH);
+
+  Blynk.virtualWrite(V0, "Yellow Light");
+
+  delay(2000);
+
+  digitalWrite(yellowPin, LOW);
+
+ 
+
+  digitalWrite(redPin, HIGH);
+
+  Blynk.virtualWrite(V0, "Red Light");
+
+  delay(5000);
+
+  digitalWrite(redPin, LOW);
+
+ 
+
+  // Pedestrian button logic
+
+  if (digitalRead(buttonPin) == LOW) {
+
+    digitalWrite(redPin, HIGH);
+
+    Blynk.virtualWrite(V0, "Pedestrian Crossing");
+
+    delay(5000);
+
+    digitalWrite(redPin, LOW);
+
+  }
+
+}
