@@ -29,3 +29,25 @@ https://github.com/BenGavin16/IOT.git
 - Enhance pedestrian button functionality.
 ## Contributing
 Contributions are welcome! Please feel free to submit issues or pull requests to improve the project.
+
+## Updated Assignment 2 Changes
+Challenges Faced:
+
+WiFi Connectivity Issues:
+Configuring the Arduino Yun to connect to WiFi was challenging and consumed significant time.
+Compilation Errors:
+Several errors were encountered while uploading code via Arduino IDE, mostly related to library usage and board settings.
+Some errors were resolved through troubleshooting, but a few persisted, impacting testing.
+Lessons Learned:
+
+Hardware-software integration requires meticulous attention to library compatibility and board configurations.
+IoT projects demand rigorous testing at every stage to identify and fix issues early.
+Current Status:
+
+The updated code includes logic for real-time traffic light status updates via Blynk.
+Full functionality could not be verified due to unresolved upload and connectivity issues.
+Future Steps:
+
+Debug the WiFi connectivity problem on the Arduino Yun.
+Test and finalize the updated code.
+Consider alternative IoT platforms for better integration and reliability.
